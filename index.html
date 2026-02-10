@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Consulting | Next Generation</title>
+    
+    <title>関西のAI研修・AI活用コンサル｜副業から法人導入まで支援【LINEヤフー出身】</title>
+    
+    <meta name="description" content="大阪・兵庫など関西を中心に、営業歴8年・LINEヤフー出身のプロが「AIの使い方」を徹底サポート。法人向けAI研修から個人の副業活用まで、実務に直結するAI活用術を伝授。業務効率化とROI最大化を実現します。">
+    
+    <meta name="keywords" content="AI研修,AI使い方,AI活用,副業,関西,大阪,AIコンサルティング,業務効率化">
+
+    <meta property="og:title" content="関西のAI研修・AI活用コンサル">
+    <meta property="og:description" content="LINEヤフーで体感した劇的汎化を、あなたのビジネスに。">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
         body { font-family: 'Inter', 'Noto Sans JP', sans-serif; overflow-x: hidden; }
 
-        /* スライドショーのコンテナ */
         .slideshow-container {
             position: absolute;
             top: 0;
@@ -21,7 +30,6 @@
             overflow: hidden;
         }
 
-        /* 各スライドの共通設定 */
         .slide {
             position: absolute;
             width: 100%;
@@ -30,13 +38,10 @@
             background-position: center;
             opacity: 0;
             transition: opacity 2s ease-in-out;
-            filter: brightness(0.4); /* 文字を見やすくするために少し暗くします */
+            filter: brightness(0.35);
         }
 
-        /* 表示中のスライド */
-        .slide.active {
-            opacity: 1;
-        }
+        .slide.active { opacity: 1; }
 
         .glow-button {
             transition: all 0.3s ease;
@@ -46,17 +51,23 @@
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
             transform: translateY(-2px);
         }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .service-card:hover { transform: scale(1.03); border-color: #38bdf8; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold tracking-tighter text-slate-800">AI CONSULTING</div>
+            <div class="text-xl font-bold tracking-tighter text-slate-800">AI CONSULTING <span class="text-xs font-normal text-slate-500 hidden sm:inline ml-2">Kansai Area</span></div>
             <nav class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#about" class="hover:text-sky-500 transition">VISION</a>
                 <a href="#services" class="hover:text-sky-500 transition">SERVICES</a>
-                <a href="#contact" class="bg-sky-600 text-white px-5 py-2 rounded-full glow-button">お問い合わせ</a>
+                <a href="#profile" class="hover:text-sky-500 transition">PROFILE</a>
+                <a href="#contact" class="bg-sky-600 text-white px-5 py-2 rounded-full glow-button">無料相談</a>
             </nav>
         </div>
     </header>
@@ -68,57 +79,124 @@
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=2000')"></div>
         </div>
 
-        <div class="max-w-4xl mx-auto text-center text-white z-10" data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                AIを、現場の<br><span class="text-sky-400">「即戦力」</span>へ。
+        <div class="max-w-4xl mx-auto text-center text-white z-10" data-aos="fade-up" data-aos-duration="1200">
+            <p class="text-sky-400 font-bold tracking-[0.2em] mb-4 uppercase text-sm">Kansai AI Innovation</p>
+            <h1 class="text-4xl md:text-7xl font-bold mb-8 leading-tight">
+                AI研修・活用で、<br><span class="text-sky-400">現場に劇的な汎化を。</span>
             </h1>
             <p class="text-slate-200 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-                営業歴8年の現場感覚と、LINEヤフーで体感した「劇的汎化」の知見で、中小企業の未来をアップデートします。
+                営業歴8年×LINEヤフー出身の知見を凝縮。<br>
+                関西エリアの法人・個人へ、実務で使える「AIの使い方」を伝授します。
             </p>
-            <a href="#contact" class="inline-block bg-sky-500 text-white font-bold px-10 py-4 rounded-full glow-button text-lg">
-                無料相談を開始する
-            </a>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-sky-500 text-white font-bold px-10 py-4 rounded-full glow-button text-lg">
+                    無料相談を開始する
+                </a>
+            </div>
         </div>
     </section>
+
+    <div class="hidden">大阪 兵庫 京都 滋賀 奈良 和歌山 AI研修 導入支援 副業講座</div>
 
     <section id="about" class="py-32 px-6 max-w-6xl mx-auto">
         <div class="grid md:grid-cols-2 gap-20 items-center">
             <div data-aos="fade-right">
-                <span class="text-sky-500 font-bold tracking-widest uppercase text-sm">Our Vision</span>
-                <h2 class="text-4xl font-bold mt-4 mb-8 leading-tight">AIは、働く人の自由を<br>取り戻すためのもの</h2>
+                <h2 class="text-4xl font-bold mb-8 leading-tight">AI活用は「時間の自由」を<br>手に入れる最短ルート</h2>
                 <p class="text-slate-600 leading-relaxed mb-6">
-                    営業現場の最前線で感じた「時間の枯渇」。それを解決したのは、LINEヤフーで目撃したAIによる業務の標準化・汎化でした。
+                    営業現場で感じた「忙しすぎて本来の仕事ができない」というジレンマ。LINEヤフー時代にAI導入によって業務が劇的に汎化され、整理されていく感動を、関西の企業様へ届けます。
                 </p>
-                <div class="border-l-4 border-sky-500 pl-6 py-2 bg-slate-100 rounded-r-lg">
-                    <p class="text-slate-700 italic">「経営者にはROIを、現場には時間を。」</p>
-                </div>
+                <p class="text-slate-600 leading-relaxed">
+                    単なるツールの紹介ではありません。経営者には明確な<strong>ROI（投資対効果）</strong>を。現場には<strong>残業削減とスキル習得</strong>を。副業希望者には<strong>収益を加速させる効率化</strong>を提供します。
+                </p>
             </div>
             <div class="relative" data-aos="zoom-in">
-                <div class="bg-white p-8 rounded-3xl shadow-2xl relative border border-slate-100">
-                    <div class="space-y-4">
-                        <div class="h-4 bg-slate-100 rounded w-3/4"></div>
-                        <div class="h-4 bg-sky-200 rounded w-5/6"></div>
-                    </div>
+                <div class="absolute -inset-4 bg-sky-100 rounded-full blur-3xl opacity-30"></div>
+                <div class="bg-slate-900 p-10 rounded-3xl shadow-2xl relative text-white">
+                    <div class="text-sky-400 font-bold mb-4">Focus Point</div>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span> 業務フローの徹底的な棚卸し</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span> Geminiを活用した独自アプリ実装</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-sky-500 rounded-full"></span> 継続して成果が出る伴走型研修</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="services" class="bg-slate-900 py-32 px-6 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-down">
+                <h2 class="text-4xl font-bold mb-4">SERVICE</h2>
+                <p class="text-slate-400">関西エリア密着のAI導入・教育支援</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card p-10 bg-white/5 border border-white/10 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-4 text-sky-400">法人向けAI研修</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">「AIの使い方」を実務ベースで習得。営業・企画・事務など各部署に最適化したリスキリングを提供。大阪を中心に全国対応。</p>
+                </div>
+                <div class="service-card p-10 bg-white/5 border border-white/10 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-4 text-sky-400">AI活用・実装</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Geminiを活用した営業案件管理アプリ等の開発。コンサルティングから独自のAIツール実装まで一気通貫で対応。</p>
+                </div>
+                <div class="service-card p-10 bg-white/5 border border-white/10 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-2xl font-bold mb-4 text-sky-400">副業・個人向け支援</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">AIを武器に副業収益を最大化。動画制作(Vrew)やコンテンツ作成など、最小の時間で最大の成果を出す活用術を伝授。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile" class="py-32 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto bg-white rounded-3xl p-10 md:p-16 shadow-xl flex flex-col md:flex-row items-center gap-12 border border-slate-100">
+            <div class="w-48 h-48 bg-slate-200 rounded-2xl flex-shrink-0 rotate-3 shadow-lg flex items-center justify-center text-slate-400 italic">Portrait</div>
+            <div data-aos="fade-left">
+                <span class="text-sky-600 font-bold text-sm">代表プロフィール</span>
+                <h3 class="text-3xl font-bold mt-2 mb-4">AIコンサルタント / 開発者</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    関西を拠点に活動。営業職として8年のキャリアを積む中で、非効率な業務の多さに危機感を抱き、ITの世界へ。LINEヤフー株式会社在籍時に、社内のAI導入プロジェクトを通じ、業務が劇的に汎化・効率化されるのを最前線で体験。その経験を活かし、中小企業や個人のAI活用を支援するため独立。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full">#LINEヤフー出身</span>
+                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full">#営業歴8年</span>
+                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full">#Gemini開発</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-6 text-center">
+        <div class="max-w-3xl mx-auto" data-aos="zoom-in">
+            <h2 class="text-4xl font-bold mb-8">関西全域で無料相談受付中</h2>
+            <p class="text-slate-500 mb-12 text-lg">AIの使い方ひとつで、ビジネスの景色は変わります。<br>大阪・兵庫・京都を中心に、対面・オンライン双方で対応可能です。</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#" class="bg-slate-900 text-white font-bold px-12 py-5 rounded-full glow-button shadow-2xl">
+                    お問い合わせフォーム
+                </a>
+                <a href="#" class="bg-[#06C755] text-white font-bold px-12 py-5 rounded-full glow-button shadow-2xl">
+                    LINEで直接相談する
+                </a>
+            </div>
+            <p class="mt-8 text-xs text-slate-400 italic">対応エリア：大阪、京都、兵庫、奈良、滋賀、和歌山、および全国オンライン</p>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-slate-900 text-center text-slate-500 text-xs">
+        &copy; 2026 AI Consulting & Development Service Kansai.
+    </footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ once: true });
+        AOS.init({ once: true, duration: 1000 });
 
-        // スライドショーの制御スクリプト
+        // スライドショー制御
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
-
         function nextSlide() {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
-
-        setInterval(nextSlide, 5000); // 5秒ごとに切り替え
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
