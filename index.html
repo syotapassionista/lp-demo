@@ -8,40 +8,43 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
-        
         body { font-family: 'Inter', 'Noto Sans JP', sans-serif; overflow-x: hidden; }
 
-        /* 動く背景グラデーション */
-        .animated-bg {
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #334155);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+        /* スライドショーのコンテナ */
+        .slideshow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
         }
 
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* 各スライドの共通設定 */
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            filter: brightness(0.4); /* 文字を見やすくするために少し暗くします */
         }
 
-        /* ホバーで光るボタン */
+        /* 表示中のスライド */
+        .slide.active {
+            opacity: 1;
+        }
+
         .glow-button {
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
         }
         .glow-button:hover {
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
             transform: translateY(-2px);
-        }
-
-        /* サービスカードのホバーエフェクト */
-        .service-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .service-card:hover {
-            transform: scale(1.05);
-            border-color: #38bdf8;
         }
     </style>
 </head>
@@ -58,12 +61,18 @@
         </div>
     </header>
 
-    <section class="animated-bg pt-48 pb-32 px-6 text-white text-center">
-        <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+    <section class="relative h-screen flex items-center justify-center px-6 overflow-hidden">
+        <div class="slideshow-container">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2000')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=2000')"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center text-white z-10" data-aos="fade-up" data-aos-duration="1000">
             <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
                 AIを、現場の<br><span class="text-sky-400">「即戦力」</span>へ。
             </h1>
-            <p class="text-slate-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-slate-200 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
                 営業歴8年の現場感覚と、LINEヤフーで体感した「劇的汎化」の知見で、中小企業の未来をアップデートします。
             </p>
             <a href="#contact" class="inline-block bg-sky-500 text-white font-bold px-10 py-4 rounded-full glow-button text-lg">
@@ -74,81 +83,42 @@
 
     <section id="about" class="py-32 px-6 max-w-6xl mx-auto">
         <div class="grid md:grid-cols-2 gap-20 items-center">
-            <div data-aos="fade-right" data-aos-duration="800">
+            <div data-aos="fade-right">
                 <span class="text-sky-500 font-bold tracking-widest uppercase text-sm">Our Vision</span>
                 <h2 class="text-4xl font-bold mt-4 mb-8 leading-tight">AIは、働く人の自由を<br>取り戻すためのもの</h2>
                 <p class="text-slate-600 leading-relaxed mb-6">
                     営業現場の最前線で感じた「時間の枯渇」。それを解決したのは、LINEヤフーで目撃したAIによる業務の標準化・汎化でした。
                 </p>
                 <div class="border-l-4 border-sky-500 pl-6 py-2 bg-slate-100 rounded-r-lg">
-                    <p class="text-slate-700 italic">「経営者にはROI（投資対効果）を、現場には自律のための時間を。」</p>
+                    <p class="text-slate-700 italic">「経営者にはROIを、現場には時間を。」</p>
                 </div>
             </div>
-            <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
-                <div class="absolute -inset-4 bg-sky-100 rounded-full blur-3xl opacity-30"></div>
+            <div class="relative" data-aos="zoom-in">
                 <div class="bg-white p-8 rounded-3xl shadow-2xl relative border border-slate-100">
                     <div class="space-y-4">
                         <div class="h-4 bg-slate-100 rounded w-3/4"></div>
-                        <div class="h-4 bg-slate-100 rounded w-full"></div>
                         <div class="h-4 bg-sky-200 rounded w-5/6"></div>
-                        <div class="h-4 bg-slate-100 rounded w-2/3"></div>
-                    </div>
-                    <div class="mt-8 flex justify-end">
-                        <div class="w-12 h-12 bg-sky-500 rounded-full"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="services" class="bg-slate-900 py-32 px-6 text-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-20" data-aos="fade-down">
-                <h2 class="text-4xl font-bold mb-4">SERVICE</h2>
-                <p class="text-slate-400">現場主義のAI導入メニュー</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="service-card p-10 bg-white/5 border border-white/10 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-2xl font-bold mb-4 text-sky-400">AIコンサル</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">人材不足を生産性で解決。経営判断を支えるROI重視の戦略策定。</p>
-                </div>
-                <div class="service-card p-10 bg-white/5 border border-white/10 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-2xl font-bold mb-4 text-sky-400">AI研修</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">現場の「残業」を「スキルアップの時間」へ変えるリスキリング実践。</p>
-                </div>
-                <div class="service-card p-10 bg-white/5 border border-white/10 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-2xl font-bold mb-4 text-sky-400">AI実装</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Gemini等を用いた独自アプリ開発。構想から実装までワンストップ。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-32 px-6 text-center bg-white">
-        <div class="max-w-3xl mx-auto" data-aos="zoom-out">
-            <h2 class="text-4xl font-bold mb-8">まずは、30分の無料相談から</h2>
-            <p class="text-slate-500 mb-12 text-lg">AIで業務がどう変わるのか、貴社の可能性を一緒に探りましょう。</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#" class="bg-slate-900 text-white font-bold px-12 py-5 rounded-full glow-button">
-                    お問い合わせフォーム
-                </a>
-                <a href="#" class="bg-[#06C755] text-white font-bold px-12 py-5 rounded-full glow-button">
-                    LINEで直接相談する
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 border-t border-slate-100 text-center text-slate-400 text-sm">
-        &copy; 2026 AI Consulting Services.
-    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            once: true, // アニメーションを1回だけ実行
-            duration: 800, // アニメーションの速度
-        });
+        AOS.init({ once: true });
+
+        // スライドショーの制御スクリプト
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000); // 5秒ごとに切り替え
     </script>
 </body>
 </html>
